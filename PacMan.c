@@ -2209,20 +2209,20 @@ uint32_t dieindex = 16916;
 void Control_Init(){
 	SYSCTL_RCGCGPIO_R |= 0x10;
 	while((SYSCTL_PRGPIO_R&0x10) == 0){};								//PortE
-		GPIO_PORTE_DIR_R &= 0xE0;										//PE 0-4 input
-		GPIO_PORTE_AFSEL_R &= 0xE2;										//PE 0,1,3,4 alternate function off
-		GPIO_PORTE_DEN_R |= 0x1B;										//PE 0,1,3,4 degital function on
+		GPIO_PORTE_DIR_R &= 0xE0;								//PE 0-4 input
+		GPIO_PORTE_AFSEL_R &= 0xE2;								//PE 0,1,3,4 alternate function off
+		GPIO_PORTE_DEN_R |= 0x1B;								//PE 0,1,3,4 degital function on
 }
 
 void SysTick_Init(){
 	NVIC_ST_CTRL_R = 0;
-	NVIC_ST_RELOAD_R = 10000000;										// waits 25 ms for each interrupt
+	NVIC_ST_RELOAD_R = 10000000;									// waits 25 ms for each interrupt
 	NVIC_ST_CURRENT_R = 0;
-	NVIC_SYS_PRI3_R = (NVIC_SYS_PRI3_R&0x00FFFFFF)|0x40000000;			//priority 2
-	NVIC_ST_CTRL_R = 0x000000007; 										// enable core clock with interrupts
+	NVIC_SYS_PRI3_R = (NVIC_SYS_PRI3_R&0x00FFFFFF)|0x40000000;					//priority 2
+	NVIC_ST_CTRL_R = 0x000000007; 									// enable core clock with interrupts
 }
 
-void Timer3_Init(void){													//for use with pacman interrupts
+void Timer3_Init(void){											//for use with pacman interrupts
 	SYSCTL_RCGCTIMER_R |= 0x08;
 	TIMER3_CTL_R = 0x00;
 	TIMER3_CFG_R = 0x00;
@@ -3061,7 +3061,7 @@ int main(void){
 			ST7735_OutChar(0x53);
 			ST7735_SetCursor(56,150);
 			ST7735_OutChar(0x63);
-			ST7735_SetCursor(62,150);												// Displaying "Score:"
+			ST7735_SetCursor(62,150);								// Displaying "Score:"
 			ST7735_OutChar(0x6F);
 			ST7735_SetCursor(68,150);
 			ST7735_OutChar(0x72);

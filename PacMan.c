@@ -1,10 +1,7 @@
-// Pacman.c
+// Pacman.c        					GAME ENGINE
 // Runs on LM4F120/TM4C123
 
 // Last Modified: 5/4/2016
-// http://www.spaceinvaders.de/
-// sounds at http://www.classicgaming.cc/classics/spaceinvaders/sounds.php
-// http://www.classicgaming.cc/classics/spaceinvaders/playguide.php
 /* This example accompanies the books
    "Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers",
    ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2014

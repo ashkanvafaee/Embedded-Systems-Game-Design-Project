@@ -24,7 +24,7 @@ void ADC_Init(void){
 		delay1 = SYSCTL_RCGCADC_R;
 		delay1 = SYSCTL_RCGCADC_R;
 		
-		ADC0_PC_R = 0x01;										//configure for 125k
+		ADC0_PC_R = 0x01;									//configure for 125k
 		ADC0_SSPRI_R = 0x0123;									//seq 3 is highest priority
 		ADC0_ACTSS_R &= ~0xF000;								//disable sample sequencer 3
 		ADC0_EMUX_R &= ~0xF000;									//seq 3 is software trigger
@@ -47,7 +47,7 @@ uint32_t ADC_In(void){
 	while(ADC0_RIS_R == 0){};									// wait until not busy
 		
 		data = ADC0_SSFIFO3_R;
-		ADC0_ISC_R |= 0x8;										//clears bit 3 in RIS to make it busy again
+		ADC0_ISC_R |= 0x8;									//clears bit 3 in RIS to make it busy again
 		
 		return(data);
 

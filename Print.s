@@ -53,9 +53,9 @@ FindDigit
 	
 	PUSH {R3, R0}		;push local variable onto stack
 	
-	ADD R11, #1			;increment counter
+	ADD R11, #1		;increment counter
 	
-	CMP R1, #0			;if there are still digits left to be displayed, go back and deal with them
+	CMP R1, #0		;if there are still digits left to be displayed, go back and deal with them
 	BNE FindDigit
 	
 	
